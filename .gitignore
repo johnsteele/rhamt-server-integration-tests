@@ -1,0 +1,12 @@
+.vscode/
+dist/
+node_modules/
+out
+.nyc_output
+coverage
+lib
+src/node_modules
+src/package.json
+src/package-lock.json
+src/config
+package-lock.json

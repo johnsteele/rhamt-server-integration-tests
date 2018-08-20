@@ -1,0 +1,42 @@
+{
+  "name": "rhamt-server-integration-tests",
+  "version": "1.0.0",
+  "description": "rhamt server integration tests",
+  "keywords": [
+    "rhamt",
+    "windup",
+    "migration",
+    "jboss"
+  ],
+  "author": "John Steele",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johnsteele/rhamt-server-integration-tests"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "devDependencies": {
+    "@types/mocha": "^5.2.0",
+    "@types/node": "^6.0.52",
+    "mocha": "^5.2.0",
+    "typescript": "~2.6.1",
+    "nyc": "^11.0.2"
+  },
+  "dependencies": {
+    "rhamt-core": "2.0.9"
+  },
+  "scripts": {
+    "start": "SET NODE_ENV=test && node server.js",
+    "build": "tsc -p .",
+    "prepublish": "tsc -p ./src",
+    "watch": "tsc --watch -p .",
+    "test": "mocha --timeout 100000 out/test --exit",
+    "nyc": "nyc mocha --timeout 100000 out/test --exit",
+    "nyc-ci": "nyc --cache false mocha --timeout 100000 out/test --exit",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "bugs": {
+    "url": "https://github.com/johnsteele/rhamt-server-integration-tests/issues"
+  }
+}
